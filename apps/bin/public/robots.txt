@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bin.happytoolin.com/sitemap-index.xml

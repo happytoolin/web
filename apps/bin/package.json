@@ -6,9 +6,16 @@
   "scripts": {
     "dev": "astro dev --host 0.0.0.0 --port 3002",
     "build": "astro build",
-    "preview": "astro preview --host 0.0.0.0 --port 3002"
+    "preview": "astro preview --host 0.0.0.0 --port 3002",
+    "deploy": "astro build && wrangler deploy",
+    "deploy:dry-run": "astro build && wrangler deploy --dry-run",
+    "cf:typegen": "wrangler types"
   },
   "devDependencies": {
-    "astro": "^6.3.1"
+    "@astrojs/cloudflare": "^13.6.1",
+    "@astrojs/sitemap": "^3.7.3",
+    "@types/node": "^25.9.1",
+    "astro": "^6.3.1",
+    "wrangler": "^4.97.0"
   }
 }

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alur.happytoolin.com/sitemap-index.xml

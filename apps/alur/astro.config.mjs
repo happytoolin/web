@@ -1,6 +1,12 @@
 import { defineConfig } from "astro/config";
+import cloudflare from "@astrojs/cloudflare";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://alur.happytoolin.com",
-  output: "static",
+  output: "server",
+  adapter: cloudflare({
+    imageService: "passthrough",
+  }),
+  integrations: [sitemap()],
 });
