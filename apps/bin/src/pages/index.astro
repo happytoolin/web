@@ -1,0 +1,91 @@
+---
+const scripts = ["alur"];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Install script host for Happy Tooling projects." />
+    <title>Happy Tooling Bin</title>
+    <style>
+      :root {
+        background: oklch(12% 0.02 250);
+        color: oklch(92% 0.014 250);
+        font-family:
+          Avenir Next,
+          Avenir,
+          Segoe UI,
+          system-ui,
+          sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: clamp(24px, 6vw, 72px);
+      }
+
+      main {
+        width: min(880px, 100%);
+      }
+
+      h1 {
+        max-width: 11ch;
+        margin: 0;
+        overflow-wrap: anywhere;
+        font-size: clamp(48px, 9vw, 112px);
+        line-height: 0.9;
+        letter-spacing: 0;
+      }
+
+      p {
+        max-width: 66ch;
+        font-size: clamp(18px, 2vw, 24px);
+        line-height: 1.5;
+      }
+
+      pre {
+        overflow-x: auto;
+        border: 1px solid oklch(34% 0.04 250);
+        border-radius: 8px;
+        margin: 32px 0;
+        padding: 18px;
+        background: oklch(17% 0.024 250);
+      }
+
+      code {
+        color: oklch(86% 0.12 159);
+        font-family:
+          SFMono-Regular,
+          Menlo,
+          Consolas,
+          monospace;
+        font-size: 15px;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>bin<wbr />.happytoolin<wbr />.com</h1>
+      <p>
+        A small host for direct install scripts. For now, it points users at the script surface we will publish here.
+      </p>
+      <pre><code>curl -fsSL https://bin.happytoolin.com/alur | sh</code></pre>
+      <p>Planned scripts:</p>
+      <ul>
+        {scripts.map((script) => <li>{script}</li>)}
+      </ul>
+    </main>
+  </body>
+</html>

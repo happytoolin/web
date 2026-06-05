@@ -1,0 +1,101 @@
+---
+const commands = ["ni", "nr", "nlx", "nci", "node install"];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="alur is a fast package-manager command router for npm, yarn, pnpm, bun, and deno." />
+    <title>alur</title>
+    <style>
+      :root {
+        background: oklch(18% 0.018 92);
+        color: oklch(94% 0.018 86);
+        font-family:
+          Avenir Next,
+          Avenir,
+          Segoe UI,
+          system-ui,
+          sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: clamp(24px, 6vw, 72px);
+      }
+
+      main {
+        width: min(980px, 100%);
+      }
+
+      h1 {
+        margin: 0;
+        color: oklch(83% 0.14 78);
+        font-size: clamp(84px, 18vw, 190px);
+        line-height: 0.84;
+        letter-spacing: 0;
+      }
+
+      p {
+        max-width: 68ch;
+        font-size: clamp(18px, 2vw, 25px);
+        line-height: 1.5;
+      }
+
+      code {
+        border-radius: 6px;
+        padding: 3px 7px;
+        background: oklch(26% 0.024 92);
+        color: oklch(89% 0.12 78);
+        font: inherit;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0;
+        margin: 34px 0;
+        list-style: none;
+      }
+
+      li {
+        border: 1px solid oklch(44% 0.04 92);
+        border-radius: 999px;
+        padding: 10px 14px;
+      }
+
+      a {
+        color: oklch(83% 0.14 78);
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.18em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>alur</h1>
+      <p>
+        Fast package-manager routing for <code>npm</code>, <code>yarn</code>,
+        <code>pnpm</code>, <code>bun</code>, and <code>deno</code>.
+      </p>
+      <ul>
+        {commands.map((command) => <li>{command}</li>)}
+      </ul>
+      <p>
+        One native binary for fast script execution, ni-style commands, and an optional Node shim.
+      </p>
+      <p>
+        <a href="https://github.com/happytoolin/alur">GitHub</a>
+      </p>
+    </main>
+  </body>
+</html>

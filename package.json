@@ -1,0 +1,15 @@
+{
+  "name": "@happytoolin/web",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@11.3.0",
+  "scripts": {
+    "dev:home": "pnpm --filter @happytoolin/home dev",
+    "dev:alur": "pnpm --filter @happytoolin/alur-site dev",
+    "dev:bin": "pnpm --filter @happytoolin/bin-site dev",
+    "build": "pnpm -r build",
+    "preview:home": "pnpm --filter @happytoolin/home preview",
+    "preview:alur": "pnpm --filter @happytoolin/alur-site preview",
+    "preview:bin": "pnpm --filter @happytoolin/bin-site preview"
+  }
+}

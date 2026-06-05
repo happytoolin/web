@@ -1,0 +1,93 @@
+---
+const tools = ["alur", "agent skills", "developer utilities"];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Happy Tooling builds small, fast tools for developers." />
+    <title>Happy Tooling</title>
+    <style>
+      :root {
+        color-scheme: light;
+        background: oklch(96% 0.012 83);
+        color: oklch(20% 0.03 248);
+        font-family:
+          Avenir Next,
+          Avenir,
+          Segoe UI,
+          system-ui,
+          sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: clamp(24px, 6vw, 72px);
+      }
+
+      main {
+        width: min(920px, 100%);
+      }
+
+      p {
+        max-width: 62ch;
+        font-size: clamp(18px, 2vw, 24px);
+        line-height: 1.5;
+      }
+
+      h1 {
+        max-width: 10ch;
+        margin: 0;
+        font-size: clamp(64px, 14vw, 156px);
+        line-height: 0.88;
+        letter-spacing: 0;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0;
+        margin: 36px 0 0;
+        list-style: none;
+      }
+
+      li {
+        border: 1px solid oklch(78% 0.04 84);
+        border-radius: 999px;
+        padding: 10px 14px;
+        background: oklch(99% 0.006 83);
+        color: oklch(34% 0.045 248);
+      }
+
+      a {
+        color: inherit;
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.18em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Happy Tooling</h1>
+      <p>
+        Small developer tools with a bias for speed, clean commands, and fewer moving parts.
+      </p>
+      <ul>
+        {tools.map((tool) => <li>{tool}</li>)}
+      </ul>
+      <p>
+        Start with <a href="https://alur.happytoolin.com">alur</a>, or use
+        <a href="https://bin.happytoolin.com">bin.happytoolin.com</a> for install scripts.
+      </p>
+    </main>
+  </body>
+</html>
