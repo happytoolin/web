@@ -11,9 +11,9 @@
     "preview:home": "pnpm --filter @happytoolin/home preview",
     "preview:alur": "pnpm --filter @happytoolin/alur-site preview",
     "preview:bin": "pnpm --filter @happytoolin/bin-site preview",
-    "deploy:home": "pnpm --filter @happytoolin/home deploy",
-    "deploy:alur": "pnpm --filter @happytoolin/alur-site deploy",
-    "deploy:bin": "pnpm --filter @happytoolin/bin-site deploy",
+    "deploy:home": "pnpm --filter @happytoolin/home run deploy",
+    "deploy:alur": "pnpm --filter @happytoolin/alur-site run deploy",
+    "deploy:bin": "pnpm --filter @happytoolin/bin-site run deploy",
     "deploy:dry-run": "pnpm -r --workspace-concurrency=1 --if-present deploy:dry-run",
     "cf:typegen": "pnpm -r --if-present cf:typegen"
   }
