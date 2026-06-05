@@ -2,7 +2,10 @@
 export const prerender = true;
 
 const commands = ["ni", "nr", "nlx", "nci", "node install"];
-const installCommand = "curl -fsSL https://bin.happytoolin.com/alur | sh";
+const installCommands = [
+  { label: "macOS / Linux", command: "curl -fsSL https://bin.happytoolin.com/alur | sh" },
+  { label: "PowerShell", command: "irm https://bin.happytoolin.com/alur.ps1 | iex" },
+];
 ---
 
 <html lang="en">
@@ -81,7 +84,7 @@ const installCommand = "curl -fsSL https://bin.happytoolin.com/alur | sh";
         font-size: 15px;
       }
 
-      ul {
+      .commands {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
@@ -90,10 +93,26 @@ const installCommand = "curl -fsSL https://bin.happytoolin.com/alur | sh";
         list-style: none;
       }
 
-      li {
+      .commands li {
         border: 1px solid oklch(44% 0.04 92);
         border-radius: 999px;
         padding: 10px 14px;
+      }
+
+      .installs {
+        display: grid;
+        gap: 18px;
+        margin: 28px 0;
+      }
+
+      .install-label {
+        margin: 0 0 8px;
+        color: oklch(78% 0.045 86);
+        font-size: 15px;
+      }
+
+      .installs pre {
+        margin: 0;
       }
 
       a {
@@ -110,13 +129,22 @@ const installCommand = "curl -fsSL https://bin.happytoolin.com/alur | sh";
         Fast package-manager routing for <code>npm</code>, <code>yarn</code>,
         <code>pnpm</code>, <code>bun</code>, and <code>deno</code>.
       </p>
-      <ul>
+      <ul class="commands">
         {commands.map((command) => <li>{command}</li>)}
       </ul>
       <p>
-        One native binary for fast script execution, ni-style commands, and an optional Node shim.
+        One native binary for fast script execution, short commands, and an optional Node shim.
       </p>
-      <pre><code>{installCommand}</code></pre>
+      <div class="installs">
+        {
+          installCommands.map((install) => (
+            <div>
+              <p class="install-label">{install.label}</p>
+              <pre><code>{install.command}</code></pre>
+            </div>
+          ))
+        }
+      </div>
       <p>
         Published at <a href="https://alur.happytoolin.com">alur.happytoolin.com</a>. Install scripts live at
         <a href="https://bin.happytoolin.com/alur">bin.happytoolin.com/alur</a>.
