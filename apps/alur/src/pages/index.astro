@@ -2,6 +2,7 @@
 export const prerender = true;
 
 const commands = ["ni", "nr", "nlx", "nci", "node install"];
+const installCommand = "curl -fsSL https://bin.happytoolin.com/alur | sh";
 ---
 
 <html lang="en">
@@ -60,6 +61,26 @@ const commands = ["ni", "nr", "nlx", "nci", "node install"];
         font: inherit;
       }
 
+      pre {
+        overflow-x: auto;
+        border: 1px solid oklch(44% 0.04 92);
+        border-radius: 8px;
+        margin: 26px 0;
+        padding: 18px;
+        background: oklch(14% 0.018 92);
+      }
+
+      pre code {
+        padding: 0;
+        background: transparent;
+        font-family:
+          SFMono-Regular,
+          Menlo,
+          Consolas,
+          monospace;
+        font-size: 15px;
+      }
+
       ul {
         display: flex;
         flex-wrap: wrap;
@@ -94,6 +115,11 @@ const commands = ["ni", "nr", "nlx", "nci", "node install"];
       </ul>
       <p>
         One native binary for fast script execution, ni-style commands, and an optional Node shim.
+      </p>
+      <pre><code>{installCommand}</code></pre>
+      <p>
+        Published at <a href="https://alur.happytoolin.com">alur.happytoolin.com</a>. Install scripts live at
+        <a href="https://bin.happytoolin.com/alur">bin.happytoolin.com/alur</a>.
       </p>
       <p>
         <a href="https://github.com/happytoolin/alur">GitHub</a>

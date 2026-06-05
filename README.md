@@ -5,8 +5,19 @@ Astro monorepo for Happy Tooling web properties.
 ## Sites
 
 - `apps/home` -> `happytoolin.com`
-- `apps/alur` -> `alur.happytoolin.com`
+- `apps/alur` -> `alur.happytoolin.com` (published)
 - `apps/bin` -> `bin.happytoolin.com`
+
+`alur.happytoolin.com` is the public alur site. The bin host exposes stable alur installer URLs:
+
+```bash
+curl -fsSL https://bin.happytoolin.com/alur | sh
+curl -fsSL https://bin.happytoolin.com/alur.sh | sh
+```
+
+```powershell
+irm https://bin.happytoolin.com/alur.ps1 | iex
+```
 
 ## Commands
 

@@ -1,7 +1,13 @@
 ---
 export const prerender = true;
 
-const scripts = ["alur"];
+import { powershellInstallCommand, shellInstallCommand } from "../installers/alur";
+
+const scripts = [
+  { href: "/alur", label: "alur", platform: "macOS / Linux", command: shellInstallCommand },
+  { href: "/alur.sh", label: "alur.sh", platform: "macOS / Linux alias", command: shellInstallCommand },
+  { href: "/alur.ps1", label: "alur.ps1", platform: "PowerShell", command: powershellInstallCommand },
+];
 ---
 
 <html lang="en">
@@ -57,7 +63,7 @@ const scripts = ["alur"];
         overflow-x: auto;
         border: 1px solid oklch(34% 0.04 250);
         border-radius: 8px;
-        margin: 32px 0;
+        margin: 12px 0 28px;
         padding: 18px;
         background: oklch(17% 0.024 250);
       }
@@ -73,7 +79,28 @@ const scripts = ["alur"];
       }
 
       ul {
-        padding-left: 20px;
+        display: grid;
+        gap: 18px;
+        padding: 0;
+        margin: 32px 0 0;
+        list-style: none;
+      }
+
+      li {
+        border-top: 1px solid oklch(34% 0.04 250);
+        padding-top: 18px;
+      }
+
+      a {
+        color: oklch(86% 0.12 159);
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.18em;
+      }
+
+      strong {
+        display: block;
+        margin-bottom: 4px;
+        color: oklch(98% 0.01 250);
       }
     </style>
   </head>
@@ -81,12 +108,20 @@ const scripts = ["alur"];
     <main>
       <h1>bin<wbr />.happytoolin<wbr />.com</h1>
       <p>
-        A small host for direct install scripts. For now, it points users at the script surface we will publish here.
+        Direct install scripts for Happy Tooling projects. Start with
+        <a href="https://alur.happytoolin.com">alur.happytoolin.com</a>.
       </p>
-      <pre><code>curl -fsSL https://bin.happytoolin.com/alur | sh</code></pre>
-      <p>Planned scripts:</p>
       <ul>
-        {scripts.map((script) => <li>{script}</li>)}
+        {
+          scripts.map((script) => (
+            <li>
+              <strong>
+                <a href={script.href}>{script.label}</a> <span>{script.platform}</span>
+              </strong>
+              <pre><code>{script.command}</code></pre>
+            </li>
+          ))
+        }
       </ul>
     </main>
   </body>
